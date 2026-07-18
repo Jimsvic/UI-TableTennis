@@ -1,0 +1,17 @@
+asgiref @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/asgiref_1699497449686/work
+beautifulsoup4==4.12.3
+dj-database-url==2.2.0
+Django @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/django_1699555153998/work
+django-bootstrap-v5==1.0.11
+django-heroku==0.3.1
+gunicorn==22.0.0
+packaging==24.1
+psycopg2==2.9.9
+psycopg2-binary==2.9.9
+setuptools==69.5.1
+soupsieve==2.5
+sqlparse @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/sqlparse_1699544474746/work
+typing_extensions==4.12.2
+tzdata @ file:///croot/python-tzdata_1690578112552/work
+wheel==0.43.0
+whitenoise==6.7.0

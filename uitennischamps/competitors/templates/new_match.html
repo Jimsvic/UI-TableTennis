@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Create New Match{% endblock %}
+{% block content %}
+
+<!-- New Image Section -->
+<section class="new-image">
+    <div class="image-container">
+      <div class="image-item">
+        <h5>the Table Tennis Tournaments testing session</h5>
+        <img src="../static/fixtures.GIF.gif" alt="fixtures">
+      </div>
+</section>
+    <h1>Create a New Profile</h1><br><br>
+    <form method="post">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required><br><br>
+
+        <label for="middlename">Middle Name:</label>
+        <input type="text" id="middlename" name="middlename" required><br><br>
+
+        <label for="surname">Sur Name:</label>
+        <input type="text" id="surname" name="surname" required><br><br>
+
+        <label for="Match_Stage">Match Stage:</label>
+        <select id="Match_Stage" name="Match Stage" required>
+
+            <option value="">Select</option>
+            <option value="Elimination Stage">Elimination Stage</option>
+            <option value="Quater Final Stage">Quater final Stage</option>
+            <option value="Semi Final Stage">Semi Final Stage</option>
+            <option value="Final Stage">Final Stage</option>
+        </select><br><br>
+        <label for="match_score">Match Current Score:</label>
+        <input type="text" id="match_score" name="match_score" required>
+        <br>
+        <br>
+        <input type="submit" value="Create Profile">
+    </form>
+{% endblock %}

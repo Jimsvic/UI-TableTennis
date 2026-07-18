@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Create cotact{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Form</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to your CSS file -->
+</head>
+<body>
+    <h1>Biodata form</h1>
+    <form action="/submit_biodata" method="post">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required><br><br>
+
+        <label for="middlename">Middle Name:</label>
+        <input type="text" id="middlename" name="middlename" required><br><br>
+
+        <label for="surname">Sur Name:</label>
+        <input type="text" id="surname" name="surname" required><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="education">Educational Qualification:</label><br>
+        <textarea id="education" name="education" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="next_of_kin">Next of Kin:</label><br>
+        <textarea id="fullname" name="nextofkin" rows="4" cols="50"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+{% endblock %}

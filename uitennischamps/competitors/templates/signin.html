@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign In{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Sign In</h1>
+  <form method="post" action="{% url 'signin' %}">
+    {% csrf_token %}<br>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required class="form-control">
+    </div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Sign In</button>
+  </form>
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+{% endblock %}

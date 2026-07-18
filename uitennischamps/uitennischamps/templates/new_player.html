@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Create New Player{% endblock %}
+{% block content %}
+    <h1>Create a New Player</h1>
+    <form method="post">
+        <label for="name">Player Name:</label>
+        <input type="text" id="name" name="name" required>
+        <input type="submit" value="Create Player">
+    </form>
+    <br>    
+    <br>
+    <br>    
+    <br>
+    <br>    
+    <br>
+    <br>    
+    <br>
+  <!-- Google Search Form -->
+  <form method="get" action="https://www.google.com/search" target="_blank" style="margin-top: 20px;">
+      <input type="text" name="q" placeholder="Search Google..." required>
+      <input type="submit" value="Google Search">
+  </form>
+<footer>
+    <p>&copy; 2024 University of Ibadan Table Tennis Tournament by Jimsvic Technology Limited. All rights reserved.</p>
+</footer>
+<br>
+<br>
+<br>
+{% endblock %}

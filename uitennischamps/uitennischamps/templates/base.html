@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}UNIVERSITY OF IBADAN TABLE TENNIS TOURNAMENT{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">  </head>
+<body>
+  <header>
+    <h1>UNIVERSITY OF IBADAN TABLE TENNIS TOURNAMENT</h1>
+  </header>
+  <a href="{% url 'index' %}">  <img id="logo" src="/static/downloadUI.jpg" alt="Logo">
+  </a>
+  <div class="slideshow">
+    <div class="slides">
+      <img src="/static/UI1.jpg" alt="Slide 1">
+      <img src="/static/UI2.jpg" alt="Slide 2">
+      <img src="/static/UI3.jpg" alt="Slide 3">
+      <img src="/static/UI4.jpg" alt="Slide 4">
+      <img src="/static/UI5.jpg" alt="Slide 5">
+      <img src="/static/UI6.png" alt="Slide 6">
+    </div>
+  </div>
+  {% block content %}{% endblock %}
+  <footer>
+    <p>&copy; 2024 University of Ibadan Table Tennis Tournament by Jimsvic Technology Limited. All rights reserved.</p>
+  </footer>
+</body>
+</html>

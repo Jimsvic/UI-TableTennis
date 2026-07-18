@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Add Score{% endblock %}
+{% block content %}
+    <h1>Add Score to Match</h1>
+      {% if messages %}
+        <ul class="flashes">
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+
+    <form method="post">
+        <label for="match_name">Match Name:</label>
+        <input type="text" id="match_name" name="match_name" required><br><br>
+
+        <label for="player_name">Player Name:</label>
+        <input type="text" id="player_name" name="player_name" required><br><br>
+
+        <label for="score">Score:</label>
+        <input type="number" id="score" name="score" required><br><br>
+
+        <input type="submit" value="Add Score">
+    </form>   
+      <br>    
+      <br>
+      <br>    
+      <br>
+      <br>    
+      <br>
+      <br>    
+      <br>
+  <!-- Google Search Form -->
+  <form method="get" action="https://www.google.com/search" target="_blank" style="margin-top: 20px;">
+      <input type="text" name="q" placeholder="Search Google..." required>
+      <input type="submit" value="Google Search">
+  </form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <h1>TABLE TENNIS TOURNAMENT!</h1>
+    <h2>Welcome to the Match Management System</h2>
+    <h3><em>A web application developed by Segun Victor JAMES</em></h3>
+    <ul>
+        <li><a href="/new_player">Create a new player</a></li>
+        <li><a href="/new_match">Create a new match</a></li>
+        <li><a href="/add_score">Add score to a match</a></li>
+        <li><a href="/get_match_details">Get match details</a></li>
+        <li><a href="/exit">Exit</a></li>
+    </ul>
+    <br>    
+    <br>
+    <br>    
+    <br>
+    <br>    
+    <br>
+    <br>    
+    <br>
+  <!-- Google Search Form -->
+  <form method="get" action="https://www.google.com/search" target="_blank" style="margin-top: 20px;">
+      <input type="text" name="q" placeholder="Search Google..." required>
+      <input type="submit" value="Google Search">
+  </form>
+<footer>
+    <p>&copy; 2024 University of Ibadan Table Tennis Tournament by Jimsvic Technology Limited. All rights reserved.</p>
+</footer>
+<br>
+<br>
+<br>
+{% endblock %}

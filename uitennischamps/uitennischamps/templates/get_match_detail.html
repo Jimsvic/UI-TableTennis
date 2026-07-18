@@ -1,0 +1,106 @@
+<!-- templates/get_match_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Match Details</title>
+</head>
+<body>
+    <h1>Get Match Details</h2>
+    <br
+    <h2>THE SIGNIFICANCE OF HOSTING A TABLE TENNIS COMPETITION AT THE UNIVERSITY OF IBADAN</h1>
+    <br>
+    <p>The University of Ibadan, renowned for its academic excellence and diverse extracurricular activities, is set to host a prestigious table tennis competition. This event holds significant importance for the university community and beyond, serving as a catalyst for various positive outcomes.</p>
+    <p>Firstly, the table tennis competition at the University of Ibadan promotes physical health and wellness among students and staff. In an era where sedentary lifestyles are becoming increasingly common due to academic and professional commitments, such sporting events encourage participants to engage in physical activities. Table tennis, in particular, is a sport that enhances cardiovascular health, improves reflexes, and aids in mental agility. By hosting this competition, the university underscores its commitment to the holistic development of its students, emphasizing the importance of balancing academic pursuits with physical well-being.</p>
+    <p>Secondly, this competition fosters a sense of community and camaraderie. Sporting events have a unique way of bringing people together, transcending individual differences and promoting unity. Students, staff, and spectators from diverse backgrounds and faculties will converge, creating an atmosphere of mutual respect and shared enthusiasm. The spirit of friendly competition can help forge new friendships, strengthen existing bonds, and build a cohesive university community. Furthermore, such events can enhance the university’s reputation, attracting future students who seek a vibrant and inclusive campus life.</p>
+    <p>Additionally, hosting a table tennis competition at the University of Ibadan provides an excellent platform for discovering and nurturing talent. Nigeria has a rich history of producing world-class athletes, and university-level competitions are often the breeding grounds for future sports stars. By organizing this event, the University of Ibadan offers its students an opportunity to showcase their skills, gain valuable experience, and potentially attract the attention of national scouts and sports associations. This can lead to greater opportunities for athletes, both academically and professionally, and contribute to the nation’s sporting success.</p>
+    <p>Moreover, the event is an opportunity for the university to engage with the wider community. Local businesses, sponsors, and media will have the chance to collaborate with the university, creating partnerships that can have lasting benefits. Such collaborations can lead to increased funding for university programs, enhanced visibility for local businesses, and a strengthened relationship between the university and the surrounding community.</p>
+    <p>In conclusion, the decision to host a table tennis competition at the University of Ibadan is a strategic one, rooted in the institution’s commitment to fostering health, community, talent, and engagement. This event is more than just a sporting competition; it is a celebration of the university’s values and a testament to its role as a beacon of excellence and unity. As participants and spectators gather for this exciting event, the University of Ibadan continues to pave the way for a vibrant, inclusive, and dynamic future.</p>
+
+    <form method="post">
+        <label for="match_name">Enter Match Name:</label>
+        <select name="match_name" id="match_name">
+            {% for match in matches %}
+            <option value="{{ match }}">{{ match }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Get Details">
+    </form>
+
+    <div id="match_details">
+        <!-- Match details will be displayed here -->
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('/get_match_details', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                displayMatchDetails(data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        });
+
+        function displayMatchDetails(data) {
+            const matchDetailsDiv = document.getElementById('match_details');
+            matchDetailsDiv.innerHTML = '';
+
+            if (data.error) {
+                matchDetailsDiv.innerHTML = `<p>${data.error}</p>`;
+            } else {
+                const matchDetails = data.match_details;
+                if (matchDetails.length === 0) {
+                    matchDetailsDiv.innerHTML = '<p>No details available for this match.</p>';
+                } else {
+                    const table = document.createElement('table');
+                    const headerRow = table.createTHead().insertRow();
+                    headerRow.insertCell().textContent = 'Player';
+                    headerRow.insertCell().textContent = 'Score';
+
+                    const tbody = table.createTBody();
+                    matchDetails.forEach(detail => {
+                        const row = tbody.insertRow();
+                        row.insertCell().textContent = detail.player;
+                        row.insertCell().textContent = detail.score;
+                    });
+
+                    matchDetailsDiv.appendChild(table);
+                }
+            }
+        }
+    </script>
+    <br>    
+        <br>
+        <br>    
+        <br>
+        <br>    
+        <br>
+        <br>    
+        <br>
+      <!-- Google Search Form -->
+      <form method="get" action="https://www.google.com/search" target="_blank" style="margin-top: 20px;">
+          <input type="text" name="q" placeholder="Search Google..." required>
+          <input type="submit" value="Google Search">
+      </form>
+    <footer>
+        <p>&copy; 2024 University of Ibadan Table Tennis Tournament by Jimsvic Technology Limited. All rights reserved.</p>
+    </footer>
+    <br>
+    <br>
+    <br>
+</body>
+</html>
